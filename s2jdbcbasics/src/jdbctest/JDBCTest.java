@@ -12,8 +12,18 @@ public class JDBCTest {
 		
 //		insertIntoDB();
 //		readFromDB();
-		updateDB();
+//		updateDB();
+		deleteDB();
 		
+	}
+	private static void deleteDB() {try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/mydb", "root", "1182511");
+			Statement statement = connection.createStatement();){
+		
+		int rowsdeleted = statement.executeUpdate("delete from account where accno = 1");
+		System.out.println("Number of rows deleted: " + rowsdeleted);
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} 
 	}
 	private static void updateDB() {try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/mydb", "root", "1182511");
 			Statement statement = connection.createStatement();){
