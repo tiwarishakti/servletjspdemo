@@ -11,9 +11,9 @@ public class JDBCTest {
 	public static void main(String[] args) {
 		
 //		insertIntoDB();
-//		readFromDB();
+		readFromDB();
 //		updateDB();
-		deleteDB();
+//		deleteDB();
 		
 	}
 	private static void deleteDB() {try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/mydb", "root", "1182511");
