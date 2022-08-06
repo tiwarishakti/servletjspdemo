@@ -48,7 +48,7 @@ public class ReadUsersServlet extends HttpServlet {
 			// resultset = read from db where email = 'x'
 			// if resultset.hasnext() { pw.write("User already exists"); }
 
-			ResultSet results = statement.executeQuery("select * from user");
+			ResultSet results = statement.executeQuery("select * from account");
 			PrintWriter out = response.getWriter();
 			out.println("<table>");
 			out.println("<tr>");

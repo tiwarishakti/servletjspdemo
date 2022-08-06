@@ -48,7 +48,7 @@ public class UpdateServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 
-		try (PreparedStatement statement = connection.prepareStatement("update user set password = ? where email = ?")) {
+		try (PreparedStatement statement = connection.prepareStatement("update account set password = ? where email = ?")) {
 
 			statement.setString(1, password);
 			statement.setString(2, email);

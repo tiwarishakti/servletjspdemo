@@ -45,8 +45,8 @@ public class DeleteServlet extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html");
 		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-		try (PreparedStatement statement = connection.prepareStatement("delete from user where email = ?")) {
+		
+		try (PreparedStatement statement = connection.prepareStatement("delete from account where email = ?")) {
 
 			statement.setString(1, email);
 			int rowsDeleted = statement.executeUpdate();
